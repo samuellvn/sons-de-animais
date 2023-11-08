@@ -1,4 +1,5 @@
-//
+//https://teachablemachine.withgoogle.com/models/IPwcaezQ5/
+
 var classificadora;
 
 function startClassification(){
@@ -22,33 +23,19 @@ function resultados_obtidos(error, results){
         document.getElementById("result_confidence").innerHTML="precisão "+(results[0].confidence*100).toFixed(2)+"%";
         document.getElementById("result_label").style.color=rgb;
         document.getElementById("result_confidence").style.color=rgb;
-        var imagem1=document.getElementById("bugio");
-        var imagem2=document.getElementById("siriema");
-        var imagem3=document.getElementById("galo_de_campina");
-        var imagem4=document.getElementById("ra_touro");
+        var imagem=document.getElementById("animal");
+        
         if(results[0].label="bugio"){
-            imagem1.src="bugio_ruivo_gif.gif";
-            imagem2.src="Seriema-2.webp";
-            imagem3.src="galo.de.campina.webp";
-            imagem4.src="rã-touro.jpeg";
+            imagem.src="bugio_ruivo_gif.gif";
         }
         else if(results[0].label="siriema"){
-            imagem1.src="macaco-bugio.webp";
-            imagem2.src="siriema.gif - Copia.gif";
-            imagem3.src="galo.de.campina.webp";
-            imagem4.src="rã-touro.jpeg";
+            imagem.src="siriema.gif";
         }
-        else if(results[0].label="galo campina"){
-            imagem1.src="macaco-bugio.webp";
-            imagem2.src="Seriema-2.webp";
-            imagem3.src="galo.de.campina.gif.jpg";
-            imagem4.src="rã-touro.jpeg";
+        else if(results[0].label="galo"){
+            imagem.src="galodecampina.gif.jpg";
         }
         else{
-        imagem1.src="macaco-bugio.webp";
-        imagem2.src="Seriema-2.webp";
-        imagem3.src="galo.de.campina.webp";
-        imagem4.src="ra_gif - Copia.gif";
+            imagem.src="ra_gif - Copia.gif";
     }
     }
 } 
