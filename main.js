@@ -4,7 +4,7 @@ var classificadora;
 
 function startClassification(){
     navigator.mediaDevices.getUserMedia({audio:true});
-    classificadora=ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/5uNvfaqYl/model.json", modelo_carregado);
+    classificadora=ml5.soundClassifier("https://teachablemachine.withgoogle.com/models/IPwcaezQ5/model.json", modelo_carregado);
 }
 function modelo_carregado(){
     classificadora.classify(resultados_obtidos);
@@ -26,16 +26,16 @@ function resultados_obtidos(error, results){
         var imagem=document.getElementById("animal");
         
         if(results[0].label="bugio"){
-            imagem.src="bugio_ruivo_gif.gif";
+            imagem.src="macaco_bugio.webp";
         }
         else if(results[0].label="siriema"){
-            imagem.src="siriema.gif";
+            imagem.src="Seriema-2.webp";
         }
         else if(results[0].label="galo"){
-            imagem.src="galodecampina.gif.jpg";
+            imagem.src="galodecampina.jpg";
         }
         else{
-            imagem.src="ra_gif - Copia.gif";
+            imagem.src="ra_touro.jpeg";
     }
     }
 } 
